@@ -1,6 +1,7 @@
 #include "Dealer.h"
 #include <time.h>
 #include "Deck.h"
+#include "Hand.h"
 
 
 
@@ -66,10 +67,18 @@ int Dealer::initializePlayers()
 		string inputName;
 		cout << "Name?";
 		cin >> inputName;
+		vector<Cards *> hand;
 
-		players.push_back(Player(inputName, i, 100));
+
+		
+
+
+		players.push_back(Player(inputName, i, 100, hand));
 		
 	}
+	hand.push_back(dealCard());
+	hand.push_back(dealCard());
+
 	//return how many players
 	cout << endl << "there are: " << numberOfPLayers << " Players" << endl << "******************" << endl;
 
@@ -80,11 +89,39 @@ int Dealer::initializePlayers()
 void Dealer::playerTurn()
 {
 	cout << "******************" << endl << "It is your turn.  What would you like to do? " << endl;
-	cout << "a: Make a bet! " << endl
-		 << "b: Hit!" << endl 
-		 << "c: Stay" <<endl 
-		 << "d: split" << endl 
-		 << "e: double" << endl << endl;
+	cout << "1: Make a bet! " << endl
+		 << "2: Hit!" << endl 
+		 << "3: Stay" <<endl 
+		 << "4: split" << endl 
+		 << "5: double" << endl << endl;
+	
+	int turnChoice;
+	cin >> turnChoice;
+
+	switch (turnChoice)
+	{
+	case 1: 
+		
+
+
+	case 2:
+
+		//Draw a card, count the value of hand, if 21 --> win if <21 --> lose else return to choice
+
+	case 3:
+
+		//count the value of the hand  if 21 --> win if <21 --> lose -->next player
+
+	case 4:
+
+	case 5:
+
+	}
+
+	
+
+	
+
 }
 
 Player * Dealer::getPlayer(int playerNumber)

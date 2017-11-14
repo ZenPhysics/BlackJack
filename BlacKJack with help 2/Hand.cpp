@@ -38,5 +38,18 @@ int Hand::handValue()
 		{
 		cout << endl << hand.front();
 		}
+	if (total = 21)
+		{
+		cout << "You Win!";
+		}
+	else if(total > 21)
+		{
+		cout << "you lose this round!";
+		}
+	else
+		{
+		cout << total;
+		}
+
 	return total;
 }

@@ -5,11 +5,12 @@
 using  namespace::std;
 
 
-Player::Player(string playerName, int playerNumber, int playerWorth)
+Player::Player(string playerName, int playerNumber, int playerWorth, vector<Cards *> hand)
 {
 	name = playerName;
 	number = playerNumber;
 	worth = playerWorth;
+	vector<Cards *> newHand = hand;
 }
 
 
@@ -32,6 +33,7 @@ int Player::makeBet()
 	cout << "Time to make a bet!  Enter your bet: " << endl;
 	cin >> betTotal;
 	cout << "Your Bet was: " << betTotal << endl;
+	
 
 
 	return betTotal;
@@ -40,7 +42,7 @@ int Player::makeBet()
 
 vector<Cards*> Player::getHand()
 {
-	return Hand;
+//	return vector<Cards*> newHand;
 }
 
 

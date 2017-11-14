@@ -10,13 +10,13 @@ class Player
 {
 
 private:
-	vector<Cards*> Hand;
+	vector<Cards*> hand;
 	string name;
 	int number;
 	int worth;
 
 public:
-	Player(string, int, int);
+	Player(string, int, int, vector<Cards *> hand);
 	~Player();
 
 	vector<Cards *> getHand();
