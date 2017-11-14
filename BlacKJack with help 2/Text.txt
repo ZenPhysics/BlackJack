@@ -1,0 +1,74 @@
+void Dealer::dealHand(int playerNumber)
+{
+	vector<Cards *> hand = players.at(playerNumber).getHand();
+	
+	hand.push_back(deck.DealRandomCard());
+	hand.push_back(deck.DealRandomCard());
+
+
+
+	//Hand.push_back(deck.DealRandomCardFaceDown());
+	if (!Hand.empty()) {
+		//Hand.back()->printCard();
+		cout << "the number of cards in hand is: " 
+			 << Hand.size() << "and the player number is: " 
+			 << playerNumber <<endl << endl;
+	}
+	//Hand.front()->printCard();
+
+	cout << "*************************" << endl;
+	cout << "this deal Hand funtion was called!!!" << endl;
+}
+
+
+
+
+
+
+
+
+void dealHand(Player *);
+
+
+
+void Dealer::dealHand(Player *)
+{
+
+
+	cout << "Deal Hand temp";
+	vector<Cards *> Hand = Player.getHand();
+
+	//Hand.push_back(deck.DealRandomCard());
+	//Hand.push_back(deck.DealRandomCard());
+
+	//Hand.push_back(deck.DealRandomCardFaceDown());
+	//if (!Hand.empty()) {
+		//Hand.back()->printCard();
+		//cout << Hand.size();
+	//}
+	//Hand.front()->printCard();
+
+	//cout << "*************************" << endl;
+	//cout << "this funtion was called!!!" << endl;
+
+}
+
+//initialize players
+	/*int numberOfPLayers;
+	cout << "******************" << endl;
+	cout << "welcome to BlackJack" << endl << endl;
+	cout << "Choose how many players" << endl;
+
+	cin >> numberOfPLayers;
+
+	for (int i = 0; i < numberOfPLayers; i++)
+	{
+		string inputName;
+		cout << "Name?";
+		cin >> inputName;
+
+		players.push_back(Player(inputName, i, 100));
+	}
+	cout << "there are: " << players.size() << " Players" << endl;*/
+
+	//initialize deck
