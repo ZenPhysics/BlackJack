@@ -44,7 +44,7 @@ void Dealer::DealInitialCards(int numberOfPlayers)
 	}
 	for (int i = 0; i < numberOfPlayers; i++)
 	{
-		dealHand(i);
+		//dealHand(i);
 		cout << endl << "player at " << i << " has a hand!" << endl;
 	}
 }

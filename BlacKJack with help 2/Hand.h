@@ -11,9 +11,11 @@ class Hand
 	int playerNumber;
 
 public:
+	
+	void takeCard(Cards * card);
 	int countHand();
 	int handValue();
-	Hand();
+	Hand(vector<Cards *> hand, int playerNumber);
 	~Hand();
 };
 

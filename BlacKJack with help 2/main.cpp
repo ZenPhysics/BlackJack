@@ -6,6 +6,7 @@
 #include "Cards.h"
 #include "Player.h"
 #include <iostream>
+#include "Hand.h"
 
 using namespace::std;
 
@@ -15,17 +16,22 @@ int main() {
 
 	Dealer jack = Dealer();
 	Deck deck1 = Deck();
+	Hand allhands = Hand();
 
 
 	deck1.initializeDeck();
 
-	jack.dealCard()->showCard;
+	jack.dealCard();
+
+	Hand player1Hand = Hand()
+
+
 	
 	//Write a method in Dealer to deal the initial facedown and faceup card to each player
 	// jack.DealInitialCards();
 
 
-	deck1.initializeDeck();
+	//deck1.initializeDeck();
 	//jack.initializePlayers();
 	//jack.DealInitialCards(3);
 

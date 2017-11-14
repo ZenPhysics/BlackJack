@@ -15,7 +15,7 @@ private:
 	int numberOfPlayers;
 
 public:
-	Deck deck;
+	
 	
 	Cards * dealCard();
 	void getDeck();

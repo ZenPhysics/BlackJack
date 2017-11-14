@@ -15,6 +15,12 @@ Hand::~Hand()
 {
 }
 
+void Hand::takeCard(Cards * card)
+{
+	
+	hand.push_back(card);
+}
+
 int Hand::countHand()
 {
 	int numberofCards = 0;
