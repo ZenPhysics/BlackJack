@@ -3,9 +3,9 @@
 
 
 
-Hand::Hand()
+Hand::Hand(int x)
 {
-	
+	playerNumber = x;
 		
 	
 }
@@ -15,7 +15,7 @@ Hand::~Hand()
 {
 }
 
-void Hand::takeCard(Cards * card)
+void Hand::addCard(Cards * card)
 {
 	
 	hand.push_back(card);

@@ -24,7 +24,7 @@ public:
 	string GetVisible();
 	void SetState(string);
 	void SetVisible(string);
-	void showCard(Cards *);
+	void showCard();
 	
 };
 

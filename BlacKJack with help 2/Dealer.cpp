@@ -71,7 +71,7 @@ int Dealer::initializePlayers()
 		
 	}
 	//return how many players
-	cout << endl << "there are: " << players.size() << " Players" << endl << "******************" << endl;
+	cout << endl << "there are: " << numberOfPLayers << " Players" << endl << "******************" << endl;
 
 	//returns number of players
 	return numberOfPLayers;
