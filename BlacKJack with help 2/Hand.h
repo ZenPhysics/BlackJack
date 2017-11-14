@@ -8,6 +8,7 @@
 class Hand
 {
 	vector<Cards *> hand;
+	int playerNumber;
 
 public:
 	int countHand();

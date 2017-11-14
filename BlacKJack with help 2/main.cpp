@@ -16,6 +16,10 @@ int main() {
 	Dealer jack = Dealer();
 	Deck deck1 = Deck();
 
+
+	deck1.initializeDeck();
+
+	jack.dealCard()->showCard;
 	
 	//Write a method in Dealer to deal the initial facedown and faceup card to each player
 	// jack.DealInitialCards();
@@ -30,15 +34,15 @@ int main() {
 	//jack.simplePrintHand(jack.GetPlayer(2));
 
 	//need to create player vector but inputting them now
-	Player player1 = Player("Adam", 1, 100);
-	Player player2 = Player("bob", 2, 100);
+	//Player player1 = Player("Adam", 1, 100);
+	//Player player2 = Player("bob", 2, 100);
 	
 	
 	//player1 refers to adam
-	cout << endl << player1.getName() << " new change!" << endl;
+	//cout << endl << player1.getName() << " new change!" << endl;
 
 	//getPlayer(1) refers to second entered player
-	cout << endl << jack.getPlayer(1)->getName() << endl;
+	//cout << endl << jack.getPlayer(1)->getName() << endl;
 
 	//printCard doesnt work
 	//player1.DealRandomCard()->printCard();

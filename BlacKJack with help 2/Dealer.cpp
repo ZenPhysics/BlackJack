@@ -1,5 +1,35 @@
 #include "Dealer.h"
+#include <time.h>
+#include "Deck.h"
 
+
+
+Cards * Dealer::dealCard()
+{
+	//get all eligible cards
+	vector<Cards *> eligibleCards;
+	//get allcards
+	vector<Cards *> allCards;
+	//vector<Cards *> Hand;
+	int max = 52;
+	for (int i = 0; i < max; i++) 
+		{
+		
+			eligibleCards.push_back(allCards.at(i));
+
+
+		}
+
+		srand(time(NULL));
+		int r = rand() % eligibleCards.size();
+
+		Cards * dealtCard = eligibleCards.at(r);
+
+
+		dealtCard->SetState("inPlay");
+		dealtCard->SetVisible("Visible");
+		return dealtCard;
+}
 
 
 void Dealer::getDeck()

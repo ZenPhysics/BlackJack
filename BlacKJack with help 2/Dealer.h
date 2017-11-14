@@ -16,8 +16,8 @@ private:
 
 public:
 	Deck deck;
-	vector<Player> players;
-	void dealCard();
+	
+	Cards * dealCard();
 	void getDeck();
 	void DealInitialCards(int numberOfPlayers);
 	int initializePlayers();
