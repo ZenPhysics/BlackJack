@@ -35,7 +35,7 @@ int main() {
 	
 	
 	//player1 refers to adam
-	cout << endl << player1.getName() << endl;
+	cout << endl << player1.getName() << " new change!" << endl;
 
 	//getPlayer(1) refers to second entered player
 	cout << endl << jack.getPlayer(1)->getName() << endl;
