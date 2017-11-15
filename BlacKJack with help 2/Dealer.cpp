@@ -102,22 +102,30 @@ void Dealer::playerTurn()
 	{
 	case 1: 
 		
-
+		break;
 
 	case 2:
 
 		//Draw a card, count the value of hand, if 21 --> win if <21 --> lose else return to choice
+		break;
 
 	case 3:
 
+		
 		//count the value of the hand  if 21 --> win if <21 --> lose -->next player
+		break;
 
 	case 4:
 
+		break;
+
 	case 5:
 
-	}
+		break;
 
+		return 0;
+	}
+	
 	
 
 	

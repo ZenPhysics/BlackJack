@@ -8,7 +8,7 @@ using namespace::std;
 
 Deck::Deck()
 {
-
+	initializeDeck();
 
 }
 
@@ -79,6 +79,7 @@ Cards * Deck::DealRandomCard()
 		dealtCard->SetVisible("Visible");
 		return dealtCard;
 
+		
 
 	}
 }

@@ -3,9 +3,9 @@
 
 
 
-Hand::Hand(int x)
+Hand::Hand()
 {
-	playerNumber = x;
+	vector<Cards *> vhand;
 		
 	
 }

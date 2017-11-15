@@ -1,16 +1,20 @@
 #include "Player.h"
 #include <numeric>
 #include "time.h"
+#include <vector>
+#include "Deck.h"
+#include "Cards.h"
+#include "Hand.h"
 
 using  namespace::std;
 
-
-Player::Player(string playerName, int playerNumber, int playerWorth, vector<Cards *> hand)
+Player::Player(string playerName, int playerNumber, int playerWorth, Hand * aHand)
 {
 	name = playerName;
 	number = playerNumber;
 	worth = playerWorth;
-	vector<Cards *> newHand = hand;
+	ahand = aHand;
+	InitializeHand();
 }
 
 
@@ -42,7 +46,21 @@ int Player::makeBet()
 
 vector<Cards*> Player::getHand()
 {
-//	return vector<Cards*> newHand;
+	//return vector<Cards*> newHand;
+}
+
+void Player::drawCard()
+{
+		Cards * aCard = deck->DealRandomCard();
+		aCard->SetState("inPlay");
+		hand.push_back(aCard);
+	
+}
+
+void Player::InitializeHand()
+{
+	drawCard();
+	drawCard();
 }
 
 

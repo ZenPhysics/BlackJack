@@ -15,7 +15,7 @@ public:
 	void addCard(Cards * card);
 	int countHand();
 	int handValue();
-	Hand(int playerNumber);
+	Hand();
 	~Hand();
 };
 
