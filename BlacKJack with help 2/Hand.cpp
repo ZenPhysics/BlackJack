@@ -5,6 +5,7 @@
 
 Hand::Hand()
 {
+	
 	vector<Cards *> vhand;
 		
 	
@@ -52,4 +53,9 @@ int Hand::handValue()
 		}
 
 	return total;
+}
+
+vector<Cards*> Hand::getHand()
+{
+	return hand;
 }

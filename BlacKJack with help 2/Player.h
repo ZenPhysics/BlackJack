@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "Deck.h"
+#include "Hand.h"
 
 using namespace::std;
 
@@ -15,19 +16,17 @@ private:
 	string name;
 	int number;
 	int worth;
-	Hand * ahand;
-	Deck * deck;
+	Hand ahand;
+	//Deck * deck;
 	
 
 public:
-	Player(string, int, int, Hand *);
+	Player(string, int, int, Hand);
 	~Player();
-
-	vector<Cards *> getHand();
-	void drawCard();
-	void InitializeHand();
 	string getName();
 	int makeBet();
+	vector<Cards*> playerGetHand();
+	Hand getHand();
 
 };
 

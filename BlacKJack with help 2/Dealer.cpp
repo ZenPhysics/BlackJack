@@ -67,20 +67,25 @@ int Dealer::initializePlayers()
 		string inputName;
 		cout << "Name?";
 		cin >> inputName;
-		vector<Cards *> hand;
+		Hand thehand = Hand();
+
+		char n = '\0';
+		if (!thehand.getHand().empty())
+		{
+			for (int i = 0; i < 2; i++)
+			{
+				thehand.addCard(deck.DealRandomCard());
+			}
 
 
-		
-
-
-		players.push_back(Player(inputName, i, 100, hand));
-		
+			players.push_back(Player(inputName, i, 100, thehand));
+		}
 	}
-	hand.push_back(dealCard());
-	hand.push_back(dealCard());
+	
 
 	//return how many players
 	cout << endl << "there are: " << numberOfPLayers << " Players" << endl << "******************" << endl;
+	cout << endl << "Vector Size: " << players.size() << endl;
 
 	//returns number of players
 	return numberOfPLayers;
@@ -123,7 +128,7 @@ void Dealer::playerTurn()
 
 		break;
 
-		return 0;
+		return ;
 	}
 	
 	
@@ -132,18 +137,20 @@ void Dealer::playerTurn()
 
 }
 
-Player * Dealer::getPlayer(int playerNumber)
+Player Dealer::getPlayer(int i)
 {
-	Player * player = &players.at(playerNumber);
-	return player;
+	if(!players.empty())
+		return players[i];
+
 }
 
 Dealer::Dealer()
 {
-	deck = Deck();
+	
 }
 
 
 Dealer::~Dealer()
 {
 }
+

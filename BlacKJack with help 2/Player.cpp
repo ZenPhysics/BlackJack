@@ -8,13 +8,13 @@
 
 using  namespace::std;
 
-Player::Player(string playerName, int playerNumber, int playerWorth, Hand * aHand)
+Player::Player(string playerName, int playerNumber, int playerWorth, Hand aHand)
 {
 	name = playerName;
 	number = playerNumber;
 	worth = playerWorth;
 	ahand = aHand;
-	InitializeHand();
+
 }
 
 
@@ -43,25 +43,18 @@ int Player::makeBet()
 	return betTotal;
 }
 
-
-vector<Cards*> Player::getHand()
+vector<Cards*> Player::playerGetHand()
 {
-	//return vector<Cards*> newHand;
+	return hand;
 }
 
-void Player::drawCard()
-{
-		Cards * aCard = deck->DealRandomCard();
-		aCard->SetState("inPlay");
-		hand.push_back(aCard);
-	
+Hand Player::getHand() {
+	return ahand;
 }
 
-void Player::InitializeHand()
-{
-	drawCard();
-	drawCard();
-}
+
+
+
 
 
 

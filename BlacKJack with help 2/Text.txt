@@ -1,3 +1,14 @@
+void Player::drawCard()
+{
+		Cards * aCard = deck->DealRandomCard();
+		aCard->SetState("inPlay");
+		hand.push_back(aCard);
+	
+}
+
+
+
+
 void Dealer::dealHand(int playerNumber)
 {
 	vector<Cards *> hand = players.at(playerNumber).getHand();

@@ -16,13 +16,11 @@ int main() {
 
 	Dealer jack = Dealer();
 	Deck deck1 = Deck();
-	
-
-
-	deck1.initializeDeck();
 	jack.initializePlayers();
+	
+	//cout << jack.getPlayer(0).getHand().countHand();
 
-	jack.dealCard();
+	
 
 	
 	

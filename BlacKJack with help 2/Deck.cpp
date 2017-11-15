@@ -41,6 +41,8 @@ void Deck::initializeDeck()
 		allCards.push_back(Cards(10, suites[i], "King", "inDeck", "notVisible"));
 		allCards.push_back(Cards(11, suites[i], "Ace", "inDeck", "notVisible"));
 	}
+
+	cout << "Deck Size: " << allCards.size() << endl;
 }
 void Deck::eligibleCards1()
 {
