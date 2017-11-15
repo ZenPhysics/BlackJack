@@ -24,12 +24,12 @@ void Hand::addCard(Cards * card)
 
 int Hand::countHand()
 {
-	int numberofCards = 0;
+	int total = 0;
 	for (int i = 0; i < hand.size(); i++)
 		{
-			numberofCards++;
+		hand.at(i).getValue() += total;
 		}
-	return numberofCards;
+	return total;
 }
 
 int Hand::handValue()
