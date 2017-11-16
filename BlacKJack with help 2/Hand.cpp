@@ -27,12 +27,15 @@ int Hand::countHand()
 	int total = 0;
 	for (int i = 0; i < hand.size(); i++)
 		{
-		//hand.at(i).getValue() += total;
-		total++;
+		hand.at(i).getValue() += total;
 		}
+<<<<<<< HEAD
 	cout << "counthand was called and it returns: " ;
 	return hand.size();
 	cout << endl << endl;
+=======
+	return total;
+>>>>>>> parent of d4be1c5... final commit for the night
 }
 
 int Hand::handValue()
