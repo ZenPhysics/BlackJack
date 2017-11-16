@@ -69,15 +69,22 @@ int Dealer::initializePlayers()
 		cin >> inputName;
 		Hand thehand = Hand();
 
+		
+
+		players.push_back(Player(inputName, i, 100, thehand));
+		
 		if (!thehand.getHand().empty())
 		{
+			cout << "didnt iterate" << endl;
+
+		}
+		else {
 			for (int i = 0; i < 2; i++)
 			{
 				thehand.addCard(deck.DealRandomCard());
+				thehand.getHand().size();
 			}
 		}
-
-		players.push_back(Player(inputName, i, 100, thehand));
 	}
 	
 

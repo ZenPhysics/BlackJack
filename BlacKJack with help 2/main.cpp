@@ -15,9 +15,10 @@ int main() {
 	// Initialize Dealer and use the debugger to see what you have actually done
 
 	Dealer jack = Dealer();
+	
 	jack.initializePlayers();
 	
-	cout << jack.getPlayer(0).getHand().countHand();
+	cout << jack.getPlayer(1).getHand().countHand();
 
 	
 

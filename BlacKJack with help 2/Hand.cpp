@@ -31,7 +31,8 @@ int Hand::countHand()
 		total++;
 		}
 	cout << "counthand was called and it returns: " ;
-	return total;
+	return hand.size();
+	cout << endl << endl;
 }
 
 int Hand::handValue()
