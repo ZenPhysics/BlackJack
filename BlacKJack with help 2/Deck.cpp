@@ -1,6 +1,7 @@
 #include "Deck.h"
 #include "Cards.h"
 #include "time.h"
+#include <vector>
 
 using namespace::std;
 
@@ -8,7 +9,9 @@ using namespace::std;
 
 Deck::Deck()
 {
+	vector<Cards> eligibleCards = vector<Cards>();
 	initializeDeck();
+	eligibleCards1();
 
 }
 
@@ -58,31 +61,25 @@ void Deck::eligibleCards1()
 
 
 }
-Cards * Deck::DealRandomCard()
+Cards *  Deck::DealRandomCard()
 {
-	//get all eligible cards
-	vector<Cards *> eligibleCards;
-	//vector<Cards *> Hand;
-	int max = allCards.size();
-	for (int i = 0; i < max; i++) {
-		if (allCards.at(i).GetState() == "inDeck") {
-			eligibleCards.push_back(&allCards.at(i));
 
+		srand(time(NULL));
+		
+		if (!eligibleCards.empty())
+		{
+			int r = rand() % allCards.size();
+
+
+			Cards * dealtCard = allCards.at(r);
+
+
+			dealtCard->SetState("inPlay");
+			dealtCard->SetVisible("Visible");
+			return dealtCard;
 
 		}
 
-		srand(time(NULL));
-		int r = rand() % eligibleCards.size();
-
-		Cards * dealtCard = eligibleCards.at(r);
-
-
-		dealtCard->SetState("inPlay");
-		dealtCard->SetVisible("Visible");
-		return dealtCard;
-
-		
-
 	}
-}
+
 

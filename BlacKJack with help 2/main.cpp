@@ -14,9 +14,20 @@ int main() {
 
 	// Initialize Dealer and use the debugger to see what you have actually done
 
+
+	//Instance of a deck
+	Deck deck1 = Deck();
+	
+	//Creates 52 cards
+	deck1.initializeDeck();
+	deck1.eligibleCards1();
+
+	//instance of dealer
 	Dealer jack = Dealer();
 	
+	//asks for players and adds them to a player vector
 	jack.initializePlayers();
+
 	
 	cout << jack.getPlayer(1).getHand().countHand();
 

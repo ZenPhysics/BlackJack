@@ -35,7 +35,14 @@ Cards * Dealer::dealCard()
 
 void Dealer::getDeck()
 {
+	
 }
+Dealer::Dealer()
+{
+	deck = Deck();
+	players = vector<Player>();
+}
+
 
 void Dealer::DealInitialCards(int numberOfPlayers)
 {
@@ -147,12 +154,6 @@ Player Dealer::getPlayer(int i)
 	if(!players.empty())
 		return players[i];
 
-}
-
-Dealer::Dealer()
-{
-	deck = Deck();
-	players = vector<Player>();
 }
 
 

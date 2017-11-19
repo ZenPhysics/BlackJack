@@ -9,7 +9,7 @@ using namespace::std;
 class Deck
 {
 
-protected:
+private:
 	vector<Cards> allCards;
 	vector<Cards> eligibleCards;
 

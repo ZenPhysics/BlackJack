@@ -1,4 +1,21 @@
-void Player::drawCard()
+{
+	//get all eligible cards
+	vector<Cards *> eligibleCards;
+	//vector<Cards *> Hand;
+	int max = allCards.size();
+	for (int i = 0; i < max; i++) {
+		if (allCards.at(i).GetState() == "inDeck") {
+			eligibleCards.push_back(&allCards.at(i));
+
+		}
+		}
+
+
+
+
+
+
+
 {
 		Cards * aCard = deck->DealRandomCard();
 		aCard->SetState("inPlay");
