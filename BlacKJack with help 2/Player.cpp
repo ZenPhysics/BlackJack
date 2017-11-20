@@ -49,6 +49,7 @@ vector<Cards*> Player::playerGetHand()
 }
 
 Hand Player::getHand() {
+	cout << endl <<"getHand returns ahand" << endl;
 	return ahand;
 }
 

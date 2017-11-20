@@ -20,7 +20,9 @@ int main() {
 	
 	//Creates 52 cards
 	deck1.initializeDeck();
-	deck1.eligibleCards1();
+
+	//CAUSED ERROR
+	//deck1.eligibleCards1();
 
 	//instance of dealer
 	Dealer jack = Dealer();
@@ -29,9 +31,14 @@ int main() {
 	jack.initializePlayers();
 
 	
-	cout << jack.getPlayer(1).getHand().countHand();
+	jack.getPlayer(0).getHand();
+		//.countHand();
 
+
+	//dealer deals a card
+	jack.dealCard()->showCard();
 	
+	//showCards should work
 
 	
 	

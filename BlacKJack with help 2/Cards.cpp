@@ -50,14 +50,14 @@ void Cards::SetVisible(string visible)
 	visibility = visible;
 }
 
-
-
-
-
 void Cards::showCard()
 {
 	cout << value << " of " << color;
 }
+
+
+
+
 
 
 

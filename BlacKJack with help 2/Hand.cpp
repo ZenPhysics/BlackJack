@@ -25,16 +25,18 @@ void Hand::addCard(Cards * card)
 int Hand::countHand()
 {
 	int total = 0;
-	for (int i = 0; i < hand.size(); i++)
+	for (unsigned int i = 0; i < hand.size(); i++)
 		{
 		total += hand.at(i)->GetValue();
 		}
 
-	cout << "counthand was called and it returns: " ;
-	return hand.size();
-	cout << endl << endl;
+	cout << "counthand was called and it returns: " << hand.size() ;
+
+	cout << endl << endl << "the total is: ";
 
 	return total;
+
+	cout << endl << endl;
 
 }
 

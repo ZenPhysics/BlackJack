@@ -7,29 +7,22 @@
 
 Cards * Dealer::dealCard()
 {
-	//get all eligible cards
-	vector<Cards *> eligibleCards;
-	//get allcards
-	vector<Cards *> allCards;
-	//vector<Cards *> Hand;
-	int max = 52;
-	for (int i = 0; i < max; i++) 
-		{
-		
-			eligibleCards.push_back(allCards.at(i));
+	srand(time(NULL));
+	vector<Cards*> allCards;
+
+	if (!allCards.empty())
+	{
+		int r = rand() % 52;
 
 
-		}
-
-		srand(time(NULL));
-		int r = rand() % eligibleCards.size();
-
-		Cards * dealtCard = eligibleCards.at(r);
+		Cards * dealtCard = allCards.at(r);
 
 
 		dealtCard->SetState("inPlay");
 		dealtCard->SetVisible("Visible");
 		return dealtCard;
+
+	}
 }
 
 
@@ -151,8 +144,12 @@ void Dealer::playerTurn()
 
 Player Dealer::getPlayer(int i)
 {
-	if(!players.empty())
+	if (!players.empty())
+	{
+		cout << endl << "player number: " << i;
 		return players[i];
+	}
+
 
 }
 

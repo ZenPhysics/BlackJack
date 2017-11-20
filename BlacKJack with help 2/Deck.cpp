@@ -9,9 +9,9 @@ using namespace::std;
 
 Deck::Deck()
 {
-	vector<Cards> eligibleCards = vector<Cards>();
-	initializeDeck();
-	eligibleCards1();
+	//vector<Cards> eligibleCards = vector<Cards>();
+	//initializeDeck();
+	//eligibleCards1();
 
 }
 
@@ -66,12 +66,12 @@ Cards *  Deck::DealRandomCard()
 
 		srand(time(NULL));
 		
-		if (!eligibleCards.empty())
+		if (!allCards.empty())
 		{
-			int r = rand() % allCards.size();
+			int r = rand() % 52;
 
 
-			Cards * dealtCard = allCards.at(r);
+			Cards * dealtCard = &allCards.at(r);
 
 
 			dealtCard->SetState("inPlay");
