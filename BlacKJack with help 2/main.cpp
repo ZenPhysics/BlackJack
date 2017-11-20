@@ -36,13 +36,13 @@ int main() {
 
 
 	//dealer deals a card
-	jack.dealCard()->showCard();
+	//jack.dealCard()->showCard();
 	
 	//showCards should work
 
-	
-	
-	
+	//create a card object to test showCard
+	Cards newCard = Cards(10, "red", "facecard", "inplay" , "visible");
+	newCard.showCard();
 
 
 	

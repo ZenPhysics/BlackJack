@@ -30,6 +30,12 @@ string Cards::GetColor()
 	return color;
 }
 
+string Cards::GetFaceCard()
+{
+	return faceCard;
+}
+
+
 int Cards::GetValue()
 {
 	return value;
@@ -52,6 +58,8 @@ void Cards::SetVisible(string visible)
 
 void Cards::showCard()
 {
+	//debugging becasue error -858993460 for value
+
 	cout << value << " of " << color;
 }
 

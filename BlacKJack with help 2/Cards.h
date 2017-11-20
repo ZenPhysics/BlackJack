@@ -20,6 +20,7 @@ public:
 	~Cards();
 	string GetState();
 	string GetColor();
+	string GetFaceCard();
 	int GetValue();
 	string GetVisible();
 	void SetState(string);
