@@ -26,7 +26,7 @@ public:
 	string getName();
 	int makeBet();
 	//vector<Cards*> playerGetHand();
-	Hand getHand();
+	Hand getPlayerHand();
 
 };
 

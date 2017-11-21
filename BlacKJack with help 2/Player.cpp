@@ -31,7 +31,7 @@ string Player::getName()
 }
 
 
-int Player::makeBet()
+/*int Player::makeBet()
 {
 	int betTotal;
 	cout << "Time to make a bet!  Enter your bet: " << endl;
@@ -41,15 +41,15 @@ int Player::makeBet()
 
 
 	return betTotal;
-}
+}*/
 
 /*Hand Player::playerGetHand()
 {
 	return hand;
 }*/
 
-Hand Player::getHand() {
-	cout << endl <<"getHand returns ahand" << endl;
+Hand Player::getPlayerHand() {
+	cout << endl <<"getHand returns hand" << endl;
 	return hand;
 }
 

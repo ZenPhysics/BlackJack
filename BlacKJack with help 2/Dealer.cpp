@@ -6,7 +6,7 @@
 
 using namespace::std;
 
-
+int numberOfPLayers;
 
 /*Cards * Dealer::dealCard()
 {
@@ -70,10 +70,9 @@ void Dealer::DealInitialCards(int numberOfPlayers)
 	}
 }
 
-int Dealer::initializePlayers()
+void Dealer::initializePlayers()
 {
 	//initialize players
-	int numberOfPLayers;
 	cout << "******************" << endl;
 	cout << "welcome to BlackJack" << endl << endl;
 	cout << "Choose how many players" << endl;
@@ -104,14 +103,6 @@ int Dealer::initializePlayers()
 
 		players.push_back(Player(inputName, i, 100, thehand));
 	}
-	
-
-	//return how many players
-	cout << endl << "there are: " << numberOfPLayers << " Players" << endl << "******************" << endl;
-	//cout << endl << "Vector Size: " << players.size() << endl;
-
-	//returns number of players
-	return numberOfPLayers;
 }
 
 void Dealer::playerTurn()
@@ -160,6 +151,18 @@ void Dealer::playerTurn()
 
 }
 
+int Dealer::getPlayerCount()
+{
+	//int numberOfPlayers = players.size();
+
+	//return how many players
+	cout << endl << "there are: " << numberOfPLayers << " Players" << endl << "******************" << endl;
+	//cout << endl << "Vector Size: " << players.size() << endl;
+
+	//returns number of players
+	return numberOfPLayers;
+}
+
 Player Dealer::getPlayer(int i)
 {
 	if (!players.empty())
@@ -172,6 +175,11 @@ Player Dealer::getPlayer(int i)
 		cout << endl << "no players" << endl;
 	}
 	return players[i];
+}
+
+Deck Dealer::getDealersDeck()
+{
+	return deck;
 }
 
 

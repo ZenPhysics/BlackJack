@@ -19,9 +19,11 @@ public:
 	
 	Cards * dealCard();
 	void DealInitialCards(int numberOfPlayers);
-	int initializePlayers();
+	void initializePlayers();
 	void playerTurn();
+	int getPlayerCount();
 	Player getPlayer(int i);
+	Deck getDealersDeck();
 	Dealer();
 	~Dealer();
 };

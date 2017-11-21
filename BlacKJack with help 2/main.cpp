@@ -31,7 +31,9 @@ int main() {
 	//jack.initializePlayers();
 
 	
-	jack.getPlayer(0).getHand();
+	jack.getPlayer(0).getPlayerHand().countHand();
+
+	cout << endl << endl << "Remaining Cards in Deck: ";// + jack.getDealersDeck().getDeck().size();
 		//.countHand();
 
 
