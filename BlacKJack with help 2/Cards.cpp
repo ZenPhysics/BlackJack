@@ -59,8 +59,15 @@ void Cards::SetVisible(string visible)
 void Cards::showCard()
 {
 	//debugging becasue error -858993460 for value
-
-	cout << value << " of " << color;
+	if (GetFaceCard() == "none")
+	{
+		cout << endl << value << " of " << color;
+	}
+	else 
+	{
+		cout << endl << faceCard << " of " << color << endl;
+	}
+	
 }
 
 

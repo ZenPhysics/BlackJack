@@ -6,7 +6,7 @@
 Hand::Hand()
 {
 	
-	vector<Cards *> vhand;
+	vector<Cards *> hand;
 		
 	
 }

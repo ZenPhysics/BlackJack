@@ -2,40 +2,60 @@
 #include <time.h>
 #include "Deck.h"
 #include "Hand.h"
+#include <iostream>
+
+using namespace::std;
 
 
 
-Cards * Dealer::dealCard()
+/*Cards * Dealer::dealCard()
 {
 	srand(time(NULL));
 	vector<Cards*> allCards;
 
+	
+
+	//Deck deck = Deck();
+	//deck.getAllCards();
+
+	cout << " the allcards vector is: " << allCards.size();
+
 	if (!allCards.empty())
 	{
 		int r = rand() % 52;
-
-
-		Cards * dealtCard = allCards.at(r);
-
-
-		dealtCard->SetState("inPlay");
-		dealtCard->SetVisible("Visible");
-		return dealtCard;
-
+		cout << "the random number is: " << r << endl;
 	}
-}
+	else
+	{
+		cout << endl << "allcards not instantiated" << endl;
+	}
+
+		//Cards * dealtCard = allCards.at(15);
 
 
-void Dealer::getDeck()
-{
+		//dealtCard->SetState("inPlay");
+		//dealtCard->SetVisible("Visible");
+		//return dealtCard;
+
 	
-}
+}*/
+
+
+
 Dealer::Dealer()
 {
 	deck = Deck();
 	players = vector<Player>();
+
+	//deck.initializeDeck();
+	initializePlayers();
 }
 
+
+Cards * Dealer::dealCard()
+{
+	return deck.DealRandomCard();
+}
 
 void Dealer::DealInitialCards(int numberOfPlayers)
 {
@@ -69,10 +89,6 @@ int Dealer::initializePlayers()
 		cin >> inputName;
 		Hand thehand = Hand();
 
-		
-
-		players.push_back(Player(inputName, i, 100, thehand));
-		
 		if (!thehand.getHand().empty())
 		{
 			cout << "didnt iterate" << endl;
@@ -81,10 +97,12 @@ int Dealer::initializePlayers()
 		else {
 			for (int i = 0; i < 2; i++)
 			{
-				thehand.addCard(deck.DealRandomCard());
+				thehand.addCard(dealCard());
 				thehand.getHand().size();
 			}
 		}
+
+		players.push_back(Player(inputName, i, 100, thehand));
 	}
 	
 
@@ -146,11 +164,14 @@ Player Dealer::getPlayer(int i)
 {
 	if (!players.empty())
 	{
-		cout << endl << "player number: " << i;
-		return players[i];
+		cout << endl << "player number: " << i;	
 	}
 
-
+	else
+	{
+		cout << endl << "no players" << endl;
+	}
+	return players[i];
 }
 
 

@@ -9,6 +9,7 @@ using namespace::std;
 
 Deck::Deck()
 {
+	initializeDeck();
 	//vector<Cards> eligibleCards = vector<Cards>();
 	//initializeDeck();
 	//eligibleCards1();
@@ -21,9 +22,9 @@ Deck::~Deck()
 
 }
 
-vector<Cards> Deck::getAllCards()
+vector<Cards> Deck::getDeck()
 {
-	return vector<Cards>();
+	return allCards;
 }
 
 
@@ -46,6 +47,7 @@ void Deck::initializeDeck()
 	}
 
 	cout << "Deck Size: " << allCards.size() << endl;
+	allCards[43].showCard();
 }
 void Deck::eligibleCards1()
 {
@@ -61,25 +63,21 @@ void Deck::eligibleCards1()
 
 
 }
+
 Cards *  Deck::DealRandomCard()
 {
-
-		srand(time(NULL));
+	srand(time(NULL));
 		
-		if (!allCards.empty())
-		{
-			int r = rand() % 52;
+	if (!allCards.empty())
+	{
+		int r = rand() % 52;
 
+		Cards * dealtCard = &allCards.at(r);
 
-			Cards * dealtCard = &allCards.at(r);
-
-
-			dealtCard->SetState("inPlay");
-			dealtCard->SetVisible("Visible");
-			return dealtCard;
-
-		}
-
+		dealtCard->SetState("inPlay");
+		dealtCard->SetVisible("Visible");
+		return dealtCard;
 	}
+}
 
 

@@ -16,10 +16,10 @@ int main() {
 
 
 	//Instance of a deck
-	Deck deck1 = Deck();
+	//Deck deck1 = Deck();
 	
 	//Creates 52 cards
-	deck1.initializeDeck();
+	//deck1.initializeDeck();
 
 	//CAUSED ERROR
 	//deck1.eligibleCards1();
@@ -28,7 +28,7 @@ int main() {
 	Dealer jack = Dealer();
 	
 	//asks for players and adds them to a player vector
-	jack.initializePlayers();
+	//jack.initializePlayers();
 
 	
 	jack.getPlayer(0).getHand();
@@ -36,13 +36,13 @@ int main() {
 
 
 	//dealer deals a card
-	//jack.dealCard()->showCard();
+	//jack.dealCard();
 	
 	//showCards should work
 
 	//create a card object to test showCard
-	Cards newCard = Cards(10, "red", "facecard", "inplay" , "visible");
-	newCard.showCard();
+	//Cards newCard = Cards(10, "hearts", "jack", "inplay" , "visible");
+	//newCard.showCard();
 
 
 	

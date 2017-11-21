@@ -18,7 +18,7 @@ public:
 	~Deck();
 	void initializeDeck();
 	void eligibleCards1();
-	vector<Cards> getAllCards();
+	vector<Cards> getDeck();
 	Cards * DealRandomCard();
 	
 

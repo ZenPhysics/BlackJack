@@ -8,12 +8,12 @@
 
 using  namespace::std;
 
-Player::Player(string playerName, int playerNumber, int playerWorth, Hand aHand)
+Player::Player(string playerName, int playerNumber, int playerWorth, Hand Hand)
 {
 	name = playerName;
 	number = playerNumber;
 	worth = playerWorth;
-	ahand = aHand;
+	hand = Hand;
 
 }
 
@@ -43,14 +43,14 @@ int Player::makeBet()
 	return betTotal;
 }
 
-vector<Cards*> Player::playerGetHand()
+/*Hand Player::playerGetHand()
 {
 	return hand;
-}
+}*/
 
 Hand Player::getHand() {
 	cout << endl <<"getHand returns ahand" << endl;
-	return ahand;
+	return hand;
 }
 
 
