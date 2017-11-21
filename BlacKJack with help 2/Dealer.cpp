@@ -97,7 +97,7 @@ void Dealer::initializePlayers()
 			for (int i = 0; i < 2; i++)
 			{
 				thehand.addCard(dealCard());
-				thehand.getHand().size();
+				thehand.getHandSize();
 			}
 		}
 
@@ -105,14 +105,12 @@ void Dealer::initializePlayers()
 	}
 }
 
-void Dealer::playerTurn()
+void Dealer::playerTurn(int i)
 {
-	cout << "******************" << endl << "It is your turn.  What would you like to do? " << endl;
-	cout << "1: Make a bet! " << endl
-		 << "2: Hit!" << endl 
-		 << "3: Stay" <<endl 
-		 << "4: split" << endl 
-		 << "5: double" << endl << endl;
+	cout << endl << "******************" << endl << "It is your turn.  What would you like to do? " << endl;
+	cout << "1: Hit! " << endl
+		 << "2: Stay!" << endl;
+		
 	
 	int turnChoice;
 	cin >> turnChoice;
@@ -121,6 +119,8 @@ void Dealer::playerTurn()
 	{
 	case 1: 
 		
+		getPlayer(i).getPlayerHand().addCard(dealCard());
+		getPlayer(i).getPlayerHand().showHand();
 		break;
 
 	case 2:
@@ -128,19 +128,7 @@ void Dealer::playerTurn()
 		//Draw a card, count the value of hand, if 21 --> win if <21 --> lose else return to choice
 		break;
 
-	case 3:
 
-		
-		//count the value of the hand  if 21 --> win if <21 --> lose -->next player
-		break;
-
-	case 4:
-
-		break;
-
-	case 5:
-
-		break;
 
 		return ;
 	}

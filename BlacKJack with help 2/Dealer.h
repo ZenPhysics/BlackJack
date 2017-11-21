@@ -20,7 +20,7 @@ public:
 	Cards * dealCard();
 	void DealInitialCards(int numberOfPlayers);
 	void initializePlayers();
-	void playerTurn();
+	void playerTurn(int i);
 	int getPlayerCount();
 	Player getPlayer(int i);
 	Deck getDealersDeck();

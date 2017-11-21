@@ -16,6 +16,15 @@ Hand::~Hand()
 {
 }
 
+void Hand::showHand()
+{
+	for (int i = 0; i < getHandSize(); i++)
+	{
+		hand[i]->showCard();
+		cout << " ";
+	}
+}
+
 void Hand::addCard(Cards * card)
 {
 	

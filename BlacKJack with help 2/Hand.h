@@ -15,6 +15,7 @@ public:
 	void addCard(Cards * card);
 	void countHand();
 	void handValue();
+	void showHand();
 	int getHandSize();
 	int getHandValue();
 	vector<Cards *> getHand();

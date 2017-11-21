@@ -12,19 +12,19 @@ protected:
 	int value;
 	string color;
 	string faceCard;
-	string state;
-	string visibility;
+	bool state;
+	bool visibility;
 
 public:
-	Cards(int, string, string, string, string);
+	Cards(int, string, string, bool , bool);
 	~Cards();
-	string GetState();
+	bool GetState();
 	string GetColor();
 	string GetFaceCard();
 	int GetValue();
-	string GetVisible();
-	void SetState(string);
-	void SetVisible(string);
+	bool GetVisible();
+	void SetState(bool);
+	void SetVisible(bool);
 	void showCard();
 	
 };

@@ -20,7 +20,7 @@ public:
 	void eligibleCards1();
 	vector<Cards> getDeck();
 	Cards * DealRandomCard();
-	
+	int countCardsInDeck();
 
 
 

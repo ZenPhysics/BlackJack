@@ -5,10 +5,9 @@
 
 using namespace::std;
 
-
-
 Deck::Deck()
 {
+	srand(time(NULL));
 	initializeDeck();
 	//vector<Cards> eligibleCards = vector<Cards>();
 	//initializeDeck();
@@ -35,15 +34,15 @@ void Deck::initializeDeck()
 	for (int i = 0; i < 4; i++) {
 		for (int j = 2; j <= 10; j++)
 		{
-			allCards.push_back(Cards(j, suites[i], "none", "inDeck", "notVisible"));
+			allCards.push_back(Cards(j, suites[i], "none", true, false));
 			
 		}
 	}
 	for (int i = 0; i < 4; i++) {
-		allCards.push_back(Cards(10, suites[i], "Jack", "inDeck", "notVisible"));
-		allCards.push_back(Cards(10, suites[i], "Queen", "inDeck", "notVisible"));
-		allCards.push_back(Cards(10, suites[i], "King", "inDeck", "notVisible"));
-		allCards.push_back(Cards(11, suites[i], "Ace", "inDeck", "notVisible"));
+		allCards.push_back(Cards(10, suites[i], "Jack", true, false));
+		allCards.push_back(Cards(10, suites[i], "Queen", true, false));
+		allCards.push_back(Cards(10, suites[i], "King", true, false));
+		allCards.push_back(Cards(11, suites[i], "Ace", true, false));
 	}
 
 	cout << "Deck Size: " << allCards.size() << endl;
@@ -66,18 +65,22 @@ void Deck::eligibleCards1()
 
 Cards *  Deck::DealRandomCard()
 {
-	srand(time(NULL));
-		
 	if (!allCards.empty())
 	{
 		int r = rand() % 52;
 
 		Cards * dealtCard = &allCards.at(r);
-
-		dealtCard->SetState("inPlay");
-		dealtCard->SetVisible("Visible");
+		//saw the same card twice?
+		allCards.erase(allCards.begin() + r);
+		dealtCard->SetState(false);
+		dealtCard->SetVisible(true);
 		return dealtCard;
 	}
+}
+
+int Deck::countCardsInDeck()
+{
+	return allCards.size();
 }
 
 

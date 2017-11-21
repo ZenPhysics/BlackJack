@@ -30,10 +30,17 @@ int main() {
 	//asks for players and adds them to a player vector
 	//jack.initializePlayers();
 
+	int i = 0;
 	
-	jack.getPlayer(0).getPlayerHand().countHand();
+	jack.getPlayer(i).getPlayerHand().countHand();
+	cout << endl << "Cards in player " << i << "'s Hand: "; 
+	jack.getPlayer(i).getPlayerHand().showHand();
+	cout << endl << endl << "Remaining Cards in Deck: " << jack.getDealersDeck().countCardsInDeck();
 
-	cout << endl << endl << "Remaining Cards in Deck: ";// + jack.getDealersDeck().getDeck().size();
+
+	jack.playerTurn(i);
+		
+		//getDeck().size();
 		//.countHand();
 
 

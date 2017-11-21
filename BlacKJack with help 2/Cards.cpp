@@ -3,7 +3,7 @@
 using namespace::std;
 
 
-Cards::Cards(int c, string v, string f, string s, string vis)
+Cards::Cards(int c, string v, string f, bool s, bool vis)
 {
 
 	value = c;
@@ -20,7 +20,7 @@ Cards::~Cards()
 {
 }
 
-string Cards::GetState()
+bool Cards::GetState()
 {
 	return state;
 }
@@ -41,17 +41,17 @@ int Cards::GetValue()
 	return value;
 }
 
-string Cards::GetVisible()
+bool Cards::GetVisible()
 {
 	return visibility;
 }
 
-void Cards::SetState(string aNewState)
+void Cards::SetState(bool aNewState)
 {
 	state = aNewState;
 }
 
-void Cards::SetVisible(string visible)
+void Cards::SetVisible(bool visible)
 {
 	visibility = visible;
 }
@@ -59,15 +59,22 @@ void Cards::SetVisible(string visible)
 void Cards::showCard()
 {
 	//debugging becasue error -858993460 for value
-	if (GetFaceCard() == "none")
+	if (visibility)
 	{
-		cout << endl << value << " of " << color;
+		if (GetFaceCard() == "none")
+		{
+			cout << value << " of " << color;
+		}
+
+		else
+		{
+			cout << faceCard << " of " << color;
+		}
 	}
 	else 
 	{
-		cout << endl << faceCard << " of " << color << endl;
+		cout << "card not visible";
 	}
-	
 }
 
 
