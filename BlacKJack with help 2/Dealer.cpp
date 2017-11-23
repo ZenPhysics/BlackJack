@@ -8,39 +8,6 @@ using namespace::std;
 
 int numberOfPLayers;
 
-/*Cards * Dealer::dealCard()
-{
-	srand(time(NULL));
-	vector<Cards*> allCards;
-
-	
-
-	//Deck deck = Deck();
-	//deck.getAllCards();
-
-	cout << " the allcards vector is: " << allCards.size();
-
-	if (!allCards.empty())
-	{
-		int r = rand() % 52;
-		cout << "the random number is: " << r << endl;
-	}
-	else
-	{
-		cout << endl << "allcards not instantiated" << endl;
-	}
-
-		//Cards * dealtCard = allCards.at(15);
-
-
-		//dealtCard->SetState("inPlay");
-		//dealtCard->SetVisible("Visible");
-		//return dealtCard;
-
-	
-}*/
-
-
 
 Dealer::Dealer()
 {
@@ -88,18 +55,14 @@ void Dealer::initializePlayers()
 		cin >> inputName;
 		Hand thehand = Hand();
 
-		if (!thehand.getHand().empty())
-		{
-			cout << "didnt iterate" << endl;
 
+
+		for (int i = 0; i < 2; i++)
+		{
+			thehand.addCard(dealCard());
+			//thehand.getHandSize();
 		}
-		else {
-			for (int i = 0; i < 2; i++)
-			{
-				thehand.addCard(dealCard());
-				thehand.getHandSize();
-			}
-		}
+
 
 		players.push_back(Player(inputName, i, 100, thehand));
 	}
@@ -112,36 +75,47 @@ void Dealer::playerTurn(int i)
 		 << "2: Stay!" << endl;
 		
 	
-	int turnChoice;
-	cin >> turnChoice;
-
-	switch (turnChoice)
-	{
-	case 1: 
-		
-		getPlayer(i).getPlayerHand().addCard(dealCard());
-		getPlayer(i).getPlayerHand().showHand();
-		getPlayer(i).getPlayerHand().handValue();
-		//test for win lose
-
-		break;
-
-	case 2:
-
-		//end the turn
-		//start the next turn
-		break;
 
 
+		int turnChoice;
+		cin >> turnChoice;
 
-		return ;
+		switch (turnChoice)
+		{
+		case 1:
+
+			getPlayer(i).getPlayerHand().addCard(dealCard());
+			getPlayer(i).getPlayerHand().countHand();
+			getPlayer(i).getPlayerHand().showHand();
+			getPlayer(i).getPlayerHand().handValue();
+			getPlayer(i).getPlayerHand().WinLose();
+
+			break;
+
+		case 2:
+
+			//end the turn
+			//start the next turn
+			break;
+
+
+
+			return;
+		}
+
 	}
-	
-	
 
-	
-
+void Dealer::turnsInGame()
+{
+	for (int i = 0; i < numberOfPLayers; i++)
+	{
+		playerTurn(i);
+	}
 }
+
+	
+
+
 
 int Dealer::getPlayerCount()
 {
@@ -159,12 +133,12 @@ Player Dealer::getPlayer(int i)
 {
 	if (!players.empty())
 	{
-		cout << endl << "player number: " << i;	
+		//cout << endl << "player number: " << i << endl;	
 	}
 
 	else
 	{
-		cout << endl << "no players" << endl;
+		//cout << endl << "no players" << endl;
 	}
 	return players[i];
 }

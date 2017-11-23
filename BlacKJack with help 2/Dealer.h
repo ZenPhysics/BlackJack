@@ -21,6 +21,7 @@ public:
 	void DealInitialCards(int numberOfPlayers);
 	void initializePlayers();
 	void playerTurn(int i);
+	void turnsInGame();
 	int getPlayerCount();
 	Player getPlayer(int i);
 	Deck getDealersDeck();

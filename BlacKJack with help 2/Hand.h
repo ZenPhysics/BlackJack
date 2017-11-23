@@ -18,6 +18,7 @@ public:
 	void showHand();
 	int getHandSize();
 	int getHandValue();
+	void WinLose();
 	vector<Cards *> getHand();
 	Hand();
 	~Hand();

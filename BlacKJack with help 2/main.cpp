@@ -32,13 +32,22 @@ int main() {
 
 	int i = 0;
 	
+	jack.getPlayerCount();
+
+
 	jack.getPlayer(i).getPlayerHand().countHand();
-	cout << endl << "Cards in player " << i << "'s Hand: "; 
+	cout << endl;
+	
 	jack.getPlayer(i).getPlayerHand().showHand();
-	cout << endl << endl << "Remaining Cards in Deck: " << jack.getDealersDeck().countCardsInDeck();
+
+	cout << "your cards are worth: ";
+	cout << jack.getPlayer(i).getPlayerHand().getHandValue() << endl;
+
+	//cout << endl << endl << "Remaining Cards in Deck: " << jack.getDealersDeck().countCardsInDeck();
 
 
-	jack.playerTurn(i);
+	//jack.playerTurn(i);
+	jack.turnsInGame();
 		
 		//getDeck().size();
 		//.countHand();

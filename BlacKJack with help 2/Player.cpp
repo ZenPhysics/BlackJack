@@ -15,14 +15,16 @@ Player::Player(string playerName, int playerNumber, int playerWorth, Hand Hand)
 	worth = playerWorth;
 	hand = Hand;
 
-}
 
+}
+void Player::DrawCard()
+{
+	//hand.addCard();
+}
 
 Player::~Player()
 {
 }
-
-
 
 
 string Player::getName()
@@ -31,25 +33,8 @@ string Player::getName()
 }
 
 
-/*int Player::makeBet()
-{
-	int betTotal;
-	cout << "Time to make a bet!  Enter your bet: " << endl;
-	cin >> betTotal;
-	cout << "Your Bet was: " << betTotal << endl;
-	
-
-
-	return betTotal;
-}*/
-
-/*Hand Player::playerGetHand()
-{
-	return hand;
-}*/
-
 Hand Player::getPlayerHand() {
-	cout << endl <<"getHand returns hand" << endl;
+
 	return hand;
 }
 

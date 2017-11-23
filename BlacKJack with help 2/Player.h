@@ -24,9 +24,7 @@ public:
 	Player(string, int, int, Hand);
 	~Player();
 	string getName();
-
-	//vector<Cards*> playerGetHand();
 	Hand getPlayerHand();
-
+	void DrawCard();
 };
 

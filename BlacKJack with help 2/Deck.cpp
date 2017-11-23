@@ -65,7 +65,7 @@ Cards * Deck::DealRandomCard()
 	int r = rand() % eligibleCards.size();
 	Cards * dealtCard = eligibleCards.at(r);
 
-	dealtCard->SetState(true);
+	dealtCard->SetState(false);
 	dealtCard->SetVisible(true);
 	return dealtCard;
 }

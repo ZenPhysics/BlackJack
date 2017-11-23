@@ -18,7 +18,7 @@ Hand::~Hand()
 
 void Hand::showHand()
 {
-	cout << "cards in hand: " << endl;
+	cout << "The cards in the  hand are: " << endl;
 	for (int i = 0; i < getHandSize(); i++)
 	{
 		hand[i]->showCard();
@@ -58,28 +58,24 @@ int Hand::getHandValue()
 	return total;
 }
 
-//int Hand::handValue()
-//{
-//	int total = 0;
-//	for (int i = 0; i < hand.size(); i++)
-//		{
-//		cout << endl << hand.front();
-//		}
-//	if (total = 21)
-//		{
-//		cout << "You Win!";
-//		}
-//	else if(total > 21)
-//		{
-//		cout << "you lose this round!";
-//		}
-//	else
-//		{
-//		cout << total;
-//		}
-//
-//	return total;
-//}
+void Hand::WinLose()
+{
+	if (getHandValue() < 21)
+	{
+		cout << "you can still hit";
+
+	}
+	else if (getHandValue() == 21)
+	{
+		cout << endl << "YOU'VE WON BLACKJACK!!!" << endl << "!!!!!!!!!!!!!!!!!!!!!!!!!!";
+	}
+	else if (getHandValue() > 21)
+	{
+		cout << endl << "Bummer, you lose... :(" ;
+	}
+}
+
+
 
 vector<Cards*> Hand::getHand()
 {
