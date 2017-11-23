@@ -17,14 +17,14 @@ private:
 	int number;
 	int worth;
 	Hand hand;
-	//Deck * deck;
+
 	
 
 public:
 	Player(string, int, int, Hand);
 	~Player();
 	string getName();
-	int makeBet();
+
 	//vector<Cards*> playerGetHand();
 	Hand getPlayerHand();
 

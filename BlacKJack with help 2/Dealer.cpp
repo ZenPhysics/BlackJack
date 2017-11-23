@@ -121,11 +121,15 @@ void Dealer::playerTurn(int i)
 		
 		getPlayer(i).getPlayerHand().addCard(dealCard());
 		getPlayer(i).getPlayerHand().showHand();
+		getPlayer(i).getPlayerHand().handValue();
+		//test for win lose
+
 		break;
 
 	case 2:
 
-		//Draw a card, count the value of hand, if 21 --> win if <21 --> lose else return to choice
+		//end the turn
+		//start the next turn
 		break;
 
 

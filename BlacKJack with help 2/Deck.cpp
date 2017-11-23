@@ -46,36 +46,28 @@ void Deck::initializeDeck()
 	}
 
 	cout << "Deck Size: " << allCards.size() << endl;
-	allCards[43].showCard();
+	//allCards[43].showCard();
 }
-void Deck::eligibleCards1()
+
+
+Cards * Deck::DealRandomCard()
 {
+	//get all eligible cards
 	vector<Cards *> eligibleCards;
-
-	for (int i = 1; i <= (int)allCards.size(); i++)
-	{
-		eligibleCards.push_back(&allCards.at(i));
+	int max = allCards.size();
+	for (int i = 0; i < max; i++) {
+		if (allCards.at(i).GetState() == true) {
+			eligibleCards.push_back(&allCards.at(i));
+		}
 	}
 
-	cout << "There are " << eligibleCards.size() << " eligible cards" << endl;
+	srand(time(NULL));
+	int r = rand() % eligibleCards.size();
+	Cards * dealtCard = eligibleCards.at(r);
 
-
-
-}
-
-Cards *  Deck::DealRandomCard()
-{
-	if (!allCards.empty())
-	{
-		int r = rand() % 52;
-
-		Cards * dealtCard = &allCards.at(r);
-		//saw the same card twice?
-		allCards.erase(allCards.begin() + r);
-		dealtCard->SetState(false);
-		dealtCard->SetVisible(true);
-		return dealtCard;
-	}
+	dealtCard->SetState(true);
+	dealtCard->SetVisible(true);
+	return dealtCard;
 }
 
 int Deck::countCardsInDeck()

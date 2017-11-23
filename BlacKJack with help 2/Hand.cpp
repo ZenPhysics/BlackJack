@@ -18,10 +18,11 @@ Hand::~Hand()
 
 void Hand::showHand()
 {
+	cout << "cards in hand: " << endl;
 	for (int i = 0; i < getHandSize(); i++)
 	{
 		hand[i]->showCard();
-		cout << " ";
+		cout << " " << endl;
 	}
 }
 
