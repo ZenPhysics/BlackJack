@@ -1,3 +1,7 @@
+make player vector and retired player vector add upp all retired at end of round against the dealer
+
+
+
 
 //get all eligible cards
 	vector<Cards *> eligibleCards;
