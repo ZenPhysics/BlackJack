@@ -13,6 +13,7 @@ Dealer::Dealer()
 {
 	deck = Deck();
 	players = vector<Player>();
+	canPlay = true;
 
 	//deck.initializeDeck();
 	initializePlayers();
@@ -64,28 +65,32 @@ void Dealer::initializePlayers()
 		}
 
 
-		players.push_back(Player(inputName, i, 100, thehand));
+		players.push_back(Player(inputName, i, 100, thehand, 0));
 	}
 }
 
 void Dealer::playerTurn(int i)
 {
-	Player p = getPlayer(i);
-	cout << endl << "It is player: " << i+1 << endl;
-	p.getPlayerHand().countHand();
+	canPlay = true;
+	Player *p = getPlayer(i);
+	cout << endl << "It is player: " << i + 1 << endl;
+	p->getPlayerHand()->countHand();
 	cout << endl;
 
-	p.getPlayerHand().showHand();
+	p->getPlayerHand()->showHand();
 
 	cout << "your cards are worth: ";
-	cout << p.getPlayerHand().getHandValue() << endl;
+	cout << p->getPlayerHand()->getHandValue() << endl;
 
-	cout << endl << "******************" << endl << "It is your turn.  What would you like to do? " << endl;
-	cout << "1: Hit! " << endl
-		 << "2: Stay!" << endl;
-		
+while (canPlay)
+{
+	cout << endl << "******************" 
+		<< endl << "It is your turn.  What would you like to do? " << endl;
+	       cout << "1: Hit! " << endl
+		        << "2: Stay!" << endl;
+
+
 	
-
 
 		int turnChoice;
 		cin >> turnChoice;
@@ -95,11 +100,12 @@ void Dealer::playerTurn(int i)
 		case 1:
 
 			cout << endl << "You Hit!!!" << endl;
-			p.getPlayerHand().addCard(dealCard());
-			p.getPlayerHand().countHand();
-			//getPlayer(i).getPlayerHand().showHand();
-			//getPlayer(i).getPlayerHand().handValue();
-			//getPlayer(i).getPlayerHand().WinLose();
+			p->getPlayerHand()->addCard(dealCard());
+			p->getPlayerHand()->countHand();
+			p->getPlayerHand()->showHand();
+			p->getPlayerHand()->handValue();
+			p->getPlayerHand()->WinLose();
+			
 
 			break;
 
@@ -108,14 +114,14 @@ void Dealer::playerTurn(int i)
 			//end the turn
 			//start the next turn
 			cout << endl << "you decided to stay" << endl;
+			
+			canPlay = false;
 			break;
 
-
-
-			return;
+			
 		}
-
 	}
+}
 
 void Dealer::turnsInGame()
 {
@@ -124,9 +130,6 @@ void Dealer::turnsInGame()
 		playerTurn(i);
 	}
 }
-
-	
-
 
 
 int Dealer::getPlayerCount()
@@ -141,19 +144,16 @@ int Dealer::getPlayerCount()
 	return numberOfPLayers;
 }
 
-Player Dealer::getPlayer(int i)
+Player * Dealer::getPlayer(int i)
 {
 	if (!players.empty())
 	{
-		return players[i];
+		return &players[i];
 		//cout << endl << "player number: " << i << endl;	
 	}
-
 	else
 	{
-		
 		cout << endl << "no players" << endl;
-		
 	}
 	
 }
@@ -161,6 +161,15 @@ Player Dealer::getPlayer(int i)
 Deck Dealer::getDealersDeck()
 {
 	return deck;
+}
+
+void Dealer::winner()
+{
+	for (int i = 0; i < numberOfPLayers; i++)
+	{
+		
+	}
+
 }
 
 

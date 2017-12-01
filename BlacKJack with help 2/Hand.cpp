@@ -63,17 +63,24 @@ void Hand::WinLose()
 	if (getHandValue() < 21)
 	{
 		cout << "you can still hit";
-
+		
+		
 	}
+	
 	else if (getHandValue() == 21)
 	{
 		cout << endl << "YOU'VE WON BLACKJACK!!!" << endl << "!!!!!!!!!!!!!!!!!!!!!!!!!!";
+		exit(0);
+		
 	}
 	else if (getHandValue() > 21)
 	{
 		cout << endl << "Bummer, you lose... :(" ;
+		exit(0);
 	}
 }
+
+
 
 
 

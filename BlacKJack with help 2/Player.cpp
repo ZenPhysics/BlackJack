@@ -8,12 +8,13 @@
 
 using  namespace::std;
 
-Player::Player(string playerName, int playerNumber, int playerWorth, Hand Hand)
+Player::Player(string playerName, int playerNumber, int playerWorth, Hand Hand, int score)
 {
 	name = playerName;
 	number = playerNumber;
 	worth = playerWorth;
 	hand = Hand;
+	playerScore = score;
 
 
 }
@@ -33,9 +34,9 @@ string Player::getName()
 }
 
 
-Hand Player::getPlayerHand() {
+Hand * Player::getPlayerHand() {
 
-	return hand;
+	return &hand;
 }
 
 

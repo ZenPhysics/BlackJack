@@ -1,3 +1,62 @@
+
+	while (p->getPlayerHand()->canPlay())
+	{
+	cout << endl << "******************" << endl << "It is your turn.  What would you like to do? " << endl;
+	cout << "1: Hit! " << endl
+		<< "2: Stay!" << endl;
+
+
+	
+
+		int turnChoice;
+		cin >> turnChoice;
+
+		switch (turnChoice)
+		{
+		case 1:
+
+			cout << endl << "You Hit!!!" << endl;
+			p->getPlayerHand()->addCard(dealCard());
+			p->getPlayerHand()->countHand();
+			p->getPlayerHand()->showHand();
+			p->getPlayerHand()->handValue();
+			p->getPlayerHand()->WinLose();
+
+			break;
+
+		case 2:
+
+			//end the turn
+			//start the next turn
+			cout << endl << "you decided to stay" << endl;
+			break;
+
+			return;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 make player vector and retired player vector add upp all retired at end of round against the dealer
 
 

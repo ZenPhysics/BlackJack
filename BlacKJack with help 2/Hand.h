@@ -9,6 +9,7 @@ class Hand
 {
 	vector<Cards *> hand;
 	int playerNumber;
+	
 
 public:
 	
@@ -19,6 +20,8 @@ public:
 	int getHandSize();
 	int getHandValue();
 	void WinLose();
+	
+	
 	vector<Cards *> getHand();
 	Hand();
 	~Hand();

@@ -17,14 +17,15 @@ private:
 	int number;
 	int worth;
 	Hand hand;
+	int playerScore;
 
 	
 
 public:
-	Player(string, int, int, Hand);
+	Player(string, int, int, Hand, int);
 	~Player();
 	string getName();
-	Hand getPlayerHand();
+	Hand * getPlayerHand();
 	void DrawCard();
 };
 

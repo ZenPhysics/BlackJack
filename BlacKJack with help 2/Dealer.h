@@ -12,7 +12,9 @@ class Dealer
 private:
 	Deck deck;
 	vector<Player> players;
-	int numberOfPlayers;
+	bool canPlay;
+
+	//int numberOfPlayers;
 
 public:
 	
@@ -23,8 +25,10 @@ public:
 	void playerTurn(int i);
 	void turnsInGame();
 	int getPlayerCount();
-	Player getPlayer(int i);
+	Player * getPlayer(int i);
 	Deck getDealersDeck();
+	void winner();
+	
 	Dealer();
 	~Dealer();
 };
